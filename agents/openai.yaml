@@ -1,0 +1,4 @@
+interface:
+  display_name: "URDF 动作预览与导出"
+  short_description: "确认 Blender 动画后打包 BVH、CSV 与预览视频"
+  default_prompt: "Use $urdf-motion-export-skill to create a new Blender preview, wait for my approval, then package the approved BLEND, BVH, CSV, MP4 preview, and report in one versioned folder."
