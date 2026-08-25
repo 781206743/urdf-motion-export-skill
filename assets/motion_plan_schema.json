@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "URDF robot motion plan",
+  "type": "object",
+  "required": ["fps", "duration_seconds", "keyframes"],
+  "properties": {
+    "fps": {"type": "integer", "minimum": 1},
+    "duration_seconds": {"type": "number", "exclusiveMinimum": 0},
+    "interpolation": {"enum": ["BEZIER", "LINEAR", "CONSTANT"]},
+    "keyframes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["frame", "pose"],
+        "properties": {
+          "frame": {"type": "integer", "minimum": 1},
+          "pose": {"type": "object", "additionalProperties": {"type": "number"}}
+        }
+      }
+    }
+  }
+}
